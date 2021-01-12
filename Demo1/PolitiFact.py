@@ -31,3 +31,13 @@ class TestSenarioOne():
             Lables = driver.find_element_by_xpath("(.//label[@class='m-togglist__label'])[" + i + "]").text
             print(Lables)
         driver.find_element_by_xpath(".//a/span[text()='Menu']").click()
+
+    def test_senario3(self):
+        driver.find_element_by_xpath(".//a/span[text()='Menu']").click()
+        driver.implicitly_wait(10)
+
+        driver.find_element_by_xpath('//div[@class = "o-menu-list__inner"]/div[1]/div[1]/div[1]/ul/li[1]/a[@href]').click()
+
+        driver.implicitly_wait(20)
+        x = driver.find_element_by_xpath('//header[@class = "m-issue__header"]').get_attribute()
+        print("value = ", x)
